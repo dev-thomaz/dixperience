@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "@fontsource-variable/inter/wght.css";
+import "lenis/dist/lenis.css";
 import { description } from "./content";
+import { SmoothScroll } from "./smooth-scroll";
 import "./globals.css";
 
 const title = "D!XPERIENCE — Creative & Digital Consultancy";
@@ -21,7 +23,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }
