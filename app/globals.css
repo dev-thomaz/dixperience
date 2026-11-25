@@ -7,7 +7,8 @@
   --gutter: clamp(1.4rem, 6vw, 8.5rem);
   --floating-contact-edge: clamp(1rem, 2.6vw, 2rem);
   --header-height: 7.75rem;
-  --font: "Inter Variable", Inter, Arial, sans-serif;
+  --font-body: "Inter Variable", Inter, Arial, sans-serif;
+  --font-heading: "Plus Jakarta Sans", var(--font-body);
 }
 
 * { box-sizing: border-box; }
@@ -20,14 +21,17 @@ html {
 body {
   margin: 0;
   color: var(--white);
-  font-family: var(--font);
+  font-family: var(--font-body);
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, p, ul { margin: 0; }
+h1, h2, h3 { font-family: var(--font-heading); font-weight: 800; }
 ul { list-style: none; padding: 0; }
-a { color: inherit; text-decoration: none; }
+a { color: inherit; font-weight: 500; text-decoration: none; }
 button { color: inherit; font: inherit; }
+button, .button, strong, p.section-label, .work-facts dt { font-weight: 600; }
 img { display: block; max-width: 100%; height: auto; }
 ::selection { color: var(--white); background: #a70971; }
 :focus-visible { outline: 2px solid #e531af; outline-offset: 6px; }
@@ -98,7 +102,6 @@ main:focus, .section-anchor:focus { outline: none; }
   min-height: 2.75rem;
   color: #ddd7e2;
   font-size: clamp(1rem, 1.28vw, 1.28rem);
-  font-weight: 450;
   transition: color 180ms ease;
 }
 
@@ -166,7 +169,6 @@ main:focus, .section-anchor:focus { outline: none; }
 
 .hero h1 {
   font-size: clamp(4.65rem, 6.68vw, 7.15rem);
-  font-weight: 740;
   line-height: .985;
   letter-spacing: -.055em;
 }
@@ -176,7 +178,6 @@ main:focus, .section-anchor:focus { outline: none; }
   margin-top: clamp(1.35rem, 2vw, 2rem);
   color: #e5e0e9;
   font-size: clamp(1.24rem, 1.78vw, 1.8rem);
-  font-weight: 400;
   line-height: 1.38;
   letter-spacing: -.023em;
   text-wrap: pretty;
@@ -192,7 +193,6 @@ main:focus, .section-anchor:focus { outline: none; }
   border: 1px solid transparent;
   border-radius: 99rem;
   font-size: 1.06rem;
-  font-weight: 680;
   line-height: 1.2;
   text-align: center;
   transition: background-color 170ms ease, color 170ms ease, border-color 170ms ease;
@@ -217,7 +217,6 @@ main:focus, .section-anchor:focus { outline: none; }
   align-items: center;
   min-height: 2.75rem;
   font-size: clamp(1rem, 1.4vw, 1.24rem);
-  font-weight: 620;
   text-decoration: underline;
   text-decoration-color: #fca8db;
   text-underline-offset: .32em;
@@ -377,7 +376,6 @@ main:focus, .section-anchor:focus { outline: none; }
 
 .work-facts dt {
   margin-bottom: .35rem;
-  font-weight: 690;
 }
 
 .work-facts dd {
@@ -500,7 +498,6 @@ html:has(.brand-dialog[open]) { overflow: hidden; }
   margin-bottom: 1.45rem;
   color: #b04d98;
   font-size: .875rem;
-  font-weight: 700;
   letter-spacing: .16em;
   text-transform: uppercase;
 }
@@ -511,7 +508,6 @@ html:has(.brand-dialog[open]) { overflow: hidden; }
   font-size: clamp(3.1rem, 5.7vw, 6.1rem);
   letter-spacing: -.07em;
   line-height: .98;
-  font-weight: 710;
   text-wrap: balance;
 }
 
@@ -558,7 +554,6 @@ html:has(.brand-dialog[open]) { overflow: hidden; }
   font-size: clamp(1.2rem, 1.92vw, 1.75rem);
   letter-spacing: -.037em;
   line-height: 1.18;
-  font-weight: 670;
 }
 
 .solution-list p, .product-list p {
@@ -630,7 +625,6 @@ html:has(.brand-dialog[open]) { overflow: hidden; }
   display: inline-block;
   margin-top: 1.5rem;
   font-size: 1rem;
-  font-weight: 690;
   text-decoration: underline;
   text-decoration-color: #aa3888;
   text-decoration-thickness: 1px;
@@ -684,7 +678,6 @@ html:has(.brand-dialog[open]) { overflow: hidden; }
   padding: 0 1rem 1.05rem 0;
   border-bottom: 1px solid #2e1d383b;
   font-size: clamp(1.12rem, 1.65vw, 1.4rem);
-  font-weight: 690;
 }
 
 .footer-columns li {
@@ -775,7 +768,6 @@ html:has(.brand-dialog[open]) { overflow: hidden; }
     border: 0;
     background: transparent;
     font-size: .95rem;
-    font-weight: 560;
     cursor: pointer;
   }
 

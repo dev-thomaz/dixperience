@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "@fontsource-variable/inter/wght.css";
+import "@fontsource/plus-jakarta-sans/latin-800.css";
 import "lenis/dist/lenis.css";
 import { description } from "./content";
 import { SmoothScroll } from "./smooth-scroll";
