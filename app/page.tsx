@@ -1,9 +1,11 @@
 import Image from "next/image";
-import { BrandCarousel } from "./brand-carousel";
-import { description, email, linkedin, products, solutions, whatsapp } from "./content";
+import { description, email, linkedin, products, whatsapp } from "./content";
 import { FeaturedWork } from "./featured-work";
+import { Footer } from "./footer";
 import { Header } from "./header";
 import { HeroMotion } from "./hero-motion";
+import { SelectedBrands } from "./selected-brands";
+import { Solutions } from "./solutions";
 
 export default function Home() {
   return (
@@ -26,25 +28,8 @@ export default function Home() {
         </section>
 
         <FeaturedWork />
-        <BrandCarousel />
-
-        <section className="solutions section-anchor" id="solutions" aria-labelledby="solutions-title" tabIndex={-1}>
-          <div className="shell solutions-layout">
-            <div className="section-intro enter">
-              <p className="section-label">Solutions</p>
-              <h2 id="solutions-title">From strategy<br />to execution<span className="accent">.</span></h2>
-              <p>Find the right mix of strategy, design and technology for what you want to build.</p>
-            </div>
-            <ul className="solution-list enter">
-              {solutions.map(({ name, details }) => (
-                <li key={name}>
-                  <h3>{name}</h3>
-                  <p>{details}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        <SelectedBrands />
+        <Solutions />
 
         <section className="products section-anchor" id="products" aria-labelledby="products-title" tabIndex={-1}>
           <div className="shell">
@@ -74,14 +59,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="about" aria-labelledby="about-title">
+        <section className="about section-anchor" id="about" aria-labelledby="about-title" tabIndex={-1}>
           <div className="shell about-layout">
             <div className="portrait enter">
               <Image
                 src="/brand/diandra-lavareda.webp"
                 alt="Diandra Lavareda"
-                width={720}
-                height={720}
+                width={800}
+                height={800}
                 sizes="(max-width: 560px) 85vw, (max-width: 760px) 38vw, 30vw"
               />
             </div>
@@ -109,15 +94,16 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="footer">
-        <div className="shell footer-inner">
-          <a className="brand-link footer-brand" href="#home">
-            <Image src="/brand/wordmark.webp" alt="D!XPERIENCE — Back to top" width={686} height={81} />
-          </a>
-          <a className="footer-email" href={`mailto:${email}`}>{email}</a>
-          <small>© D!XPERIENCE</small>
-        </div>
-      </footer>
+      <Footer />
+      <a
+        aria-label="Chat with D!XPERIENCE on WhatsApp"
+        className="floating-whatsapp"
+        href={whatsapp}
+        rel="noreferrer"
+        target="_blank"
+      >
+        <Image alt="" src="/brand/whatsapp.png" width={28} height={28} unoptimized />
+      </a>
     </>
   );
 }

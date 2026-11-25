@@ -15,32 +15,32 @@ export const linkedin = "https://www.linkedin.com/in/diandra-lavareda";
 export const description =
   "Creative and digital consultancy. We combine digital strategy, creativity, design, and technology to build brands and digital experiences that connect with people, drive growth, and deliver meaningful business results.";
 
-export const solutions = [
-  {
+export const solutions = {
+  consulting: {
     name: "Creative & Digital Consulting",
     details: "Brand consulting, digital strategy, customer experience and business communication.",
   },
-  {
+  marketing: {
     name: "Digital Marketing & Growth",
     details: "Social media, paid campaigns, content marketing, email and growth strategy.",
   },
-  {
+  "web-design": {
     name: "Web & Digital Design",
     details: "Websites, landing pages, e-commerce, apps and digital experiences.",
   },
-  {
+  communication: {
     name: "Content & Communication",
     details: "UX writing, copywriting, content design and content strategy.",
   },
-  {
+  branding: {
     name: "Branding & Creative Design",
     details: "Brand identity, graphic design, visual communication and art direction.",
   },
-  {
+  "product-design": {
     name: "UX/UI & Product Design",
     details: "User research, product design, prototyping and user journeys.",
   },
-];
+} as const;
 
 export const products = [
   {
