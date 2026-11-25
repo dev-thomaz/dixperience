@@ -1,5 +1,6 @@
 export const navigation = [
   { id: "home", label: "Home" },
+  { id: "work", label: "Work" },
   { id: "solutions", label: "Solutions" },
   { id: "products", label: "Products" },
   { id: "contact", label: "Contact" },

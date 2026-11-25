@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { BrandCarousel } from "./brand-carousel";
 import { description, email, linkedin, products, solutions, whatsapp } from "./content";
+import { FeaturedWork } from "./featured-work";
 import { Header } from "./header";
 import { HeroMotion } from "./hero-motion";
 
@@ -15,10 +17,16 @@ export default function Home() {
             <div className="hero-copy">
               <h1 id="hero-title">Personalized<br />Innovation<span className="accent">.</span></h1>
               <p>{description}</p>
-              <a className="button button-light" href="#contact">Talk to us</a>
+              <div className="hero-actions">
+                <a className="button button-light" href="#contact">Talk to us</a>
+                <a className="hero-work-link" href="#work">View our work</a>
+              </div>
             </div>
           </div>
         </section>
+
+        <FeaturedWork />
+        <BrandCarousel />
 
         <section className="solutions section-anchor" id="solutions" aria-labelledby="solutions-title" tabIndex={-1}>
           <div className="shell solutions-layout">
