@@ -102,7 +102,6 @@ const en = {
     },
   },
   products: {
-    label: "Products",
     title: "Some of our products",
     intro: "Focused solutions for brand, digital presence, growth and product, with strategy, design and execution working together.",
     action: "Discuss this product",
@@ -238,7 +237,6 @@ const pt: SiteCopy = {
     },
   },
   products: {
-    label: "Produtos",
     title: "Alguns dos nossos produtos",
     intro: "Soluções para marca, presença digital, crescimento e produto, com estratégia, design e execução a trabalhar em conjunto.",
     action: "Falar sobre este produto",

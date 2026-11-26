@@ -83,12 +83,9 @@ export function Products({ copy, discussOffer }: { copy: SiteCopy["products"] } 
   return (
     <section className="offers-section products section-anchor" id="products" aria-labelledby="products-title" tabIndex={-1}>
       <div className="shell">
-        <div className="products-intro">
-          <div className="section-intro offers-intro">
-            <p className="section-label">{copy.label}</p>
-            <h2 id="products-title">{copy.title}<span className="accent">.</span></h2>
-            <p>{copy.intro}</p>
-          </div>
+        <div className="section-intro products-intro">
+          <h2 id="products-title">{copy.title}<span className="accent">.</span></h2>
+          <p>{copy.intro}</p>
           <Image
             alt=""
             className="products-mark"
