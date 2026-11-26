@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { linkedin, whatsappLink, type Locale } from "./content";
+import { email, linkedin, whatsappLink, type Locale } from "./content";
 import { FeaturedWork } from "./featured-work";
 import { Footer } from "./footer";
 import { Header } from "./header";
@@ -60,11 +60,14 @@ export function Landing({ locale }: { locale: Locale }) {
         </section>
 
         <section className="contact section-anchor" id="contact" aria-labelledby="contact-title" tabIndex={-1}>
-          <div className="shell contact-content">
-            <h2 id="contact-title">{copy.contact.question}<br />{" "}{copy.contact.invitation}</h2>
-            <a className="button button-light" href={whatsappLink(copy.contact.callMessage)}>
-              {copy.contact.call}
-            </a>
+          <div className="shell contact-content enter">
+            <p className="section-label">{copy.navigation.contact}</p>
+            <h2 id="contact-title">{copy.contact.title}<span className="accent">.</span></h2>
+            <p>{copy.contact.intro}</p>
+            <div className="contact-actions">
+              <a className="button button-light" href={`mailto:${email}`}>{copy.contact.email}</a>
+              <a className="button button-outline" href={whatsapp}>WhatsApp</a>
+            </div>
           </div>
         </section>
       </main>

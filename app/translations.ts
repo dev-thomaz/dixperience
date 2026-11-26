@@ -59,6 +59,12 @@ const en = {
     label: "Ways to work with us",
     title: "Built around your business stage",
     fit: "A good fit if…",
+    discovery: {
+      question: "Not sure what your product needs?",
+      invitation: "Let’s figure it out together.",
+      action: "Book a free discovery call",
+      message: "Hi! I’d like to arrange a free discovery call with D!XPERIENCE.",
+    },
     items: {
       launch: {
         name: "Launch & Build",
@@ -113,11 +119,10 @@ const en = {
     linkedin: "Diandra on LinkedIn",
   },
   contact: {
-    question: "Not sure what your product needs?",
-    invitation: "Let’s figure it out together.",
-    call: "Book a free discovery call",
+    title: "Let’s talk",
+    intro: "Have a project in mind? Tell us what you’d like to create.",
+    email: "Email us",
     generalMessage: "Hi! I found D!XPERIENCE through your website and would love to discuss a project.",
-    callMessage: "Hi! I’d like to arrange a free discovery call with D!XPERIENCE.",
     offerMessage: "Hi! I’d like to talk about {offer}.",
   },
   footer: {
@@ -190,6 +195,12 @@ const pt: SiteCopy = {
     label: "Formas de trabalhar connosco",
     title: "À medida da fase do seu negócio",
     fit: "Faz sentido para si se…",
+    discovery: {
+      question: "Ainda não sabe do que o seu produto precisa?",
+      invitation: "Vamos descobrir em conjunto.",
+      action: "Agendar uma conversa gratuita",
+      message: "Olá! Gostava de agendar uma conversa inicial gratuita com a D!XPERIENCE.",
+    },
     items: {
       launch: {
         name: "Lançar e Construir",
@@ -244,11 +255,10 @@ const pt: SiteCopy = {
     linkedin: "Diandra no LinkedIn",
   },
   contact: {
-    question: "Ainda não sabe do que o seu produto precisa?",
-    invitation: "Vamos descobrir em conjunto.",
-    call: "Agendar uma conversa gratuita",
+    title: "Vamos conversar",
+    intro: "Tem um projeto em mente? Conte-nos o que gostava de criar.",
+    email: "Enviar e-mail",
     generalMessage: "Olá! Encontrei a D!XPERIENCE através do vosso site e gostava de conversar sobre um projeto.",
-    callMessage: "Olá! Gostava de agendar uma conversa inicial gratuita com a D!XPERIENCE.",
     offerMessage: "Olá! Gostava de conversar sobre {offer}.",
   },
   footer: {

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { whatsappLink } from "./content";
 import type { SiteCopy } from "./translations";
 
 const approachCards = [
@@ -67,6 +68,12 @@ export function Approach({ copy, discussOffer }: { copy: SiteCopy["approach"] } 
             );
           })}
         </ul>
+        <div className="discovery-call">
+          <h3>{copy.discovery.question}<br />{" "}{copy.discovery.invitation}</h3>
+          <a className="button button-light" href={whatsappLink(copy.discovery.message)}>
+            {copy.discovery.action}
+          </a>
+        </div>
       </div>
     </section>
   );
