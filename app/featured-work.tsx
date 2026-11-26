@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ExternalLink } from "./external-link";
 import type { SiteCopy } from "./translations";
 
 export function FeaturedWork({ copy }: { copy: SiteCopy["work"] }) {
@@ -7,14 +8,12 @@ export function FeaturedWork({ copy }: { copy: SiteCopy["work"] }) {
       <div className="shell">
         <div className="work-layout">
           <div className="work-intro section-intro">
-            <p className="section-label">{copy.label}</p>
-            <h2 id="work-title">Visit South<br /> America<span className="accent">.</span></h2>
-            <div className="work-summary">
-              <p>{copy.summary}</p>
-              <a className="button button-dark" href="https://visitsouthamerica.travel/">
-                {copy.visit}
-              </a>
-            </div>
+            <h2 id="work-title">{copy.label}<span className="accent">.</span></h2>
+            <p className="work-name">Visit South America</p>
+            <p>{copy.summary}</p>
+            <ExternalLink className="button button-dark" href="https://visitsouthamerica.travel/">
+              {copy.visit}
+            </ExternalLink>
           </div>
 
           <div className="work-visual">

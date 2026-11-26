@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { email, linkedin } from "./content";
+import { ExternalLink } from "./external-link";
 import type { SiteCopy } from "./translations";
 
 const explore = ["home", "solutions", "work", "approach", "products", "about", "contact"] as const;
@@ -29,8 +30,8 @@ export function Footer({ copy, whatsapp }: { copy: SiteCopy; whatsapp: string })
             <h2 id="footer-connect">{copy.footer.connect}</h2>
             <ul>
               <li><a href={`mailto:${email}`}>{copy.footer.email}</a></li>
-              <li><a href={whatsapp}>WhatsApp</a></li>
-              <li><a href={linkedin}>LinkedIn</a></li>
+              <li><ExternalLink href={whatsapp}>WhatsApp</ExternalLink></li>
+              <li><ExternalLink href={linkedin}>LinkedIn</ExternalLink></li>
             </ul>
           </nav>
         </div>

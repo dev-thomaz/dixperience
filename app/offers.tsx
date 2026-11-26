@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { whatsappLink } from "./content";
+import { ExternalLink } from "./external-link";
 import type { SiteCopy } from "./translations";
 
 const approachCards = [
@@ -63,16 +64,16 @@ export function Approach({ copy, discussOffer }: { copy: SiteCopy["approach"] } 
                     {fit.map((line) => <li key={line}>{line}</li>)}
                   </ul>
                 </div>
-                <a className="button offer-button" href={discussOffer(name)}>{action}</a>
+                <ExternalLink className="button offer-button" href={discussOffer(name)}>{action}</ExternalLink>
               </li>
             );
           })}
         </ul>
         <div className="discovery-call">
           <h3>{copy.discovery.question}<br />{" "}{copy.discovery.invitation}</h3>
-          <a className="button button-light" href={whatsappLink(copy.discovery.message)}>
+          <ExternalLink className="button button-light" href={whatsappLink(copy.discovery.message)}>
             {copy.discovery.action}
-          </a>
+          </ExternalLink>
         </div>
       </div>
     </section>
@@ -103,9 +104,9 @@ export function Products({ copy, discussOffer }: { copy: SiteCopy["products"] } 
                 <span className="offer-icon"><OfferIcon name={id} /></span>
                 <h3>{name}</h3>
                 <p>{details}</p>
-                <a aria-label={`${copy.action} — ${name}`} className="text-link offer-link" href={discussOffer(name)}>
+                <ExternalLink aria-label={`${copy.action} — ${name}`} className="text-link offer-link" href={discussOffer(name)}>
                   {copy.action}
-                </a>
+                </ExternalLink>
               </li>
             );
           })}

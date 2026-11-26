@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { email, linkedin, whatsappLink, type Locale } from "./content";
+import { ExternalLink } from "./external-link";
 import { FeaturedWork } from "./featured-work";
 import { Footer } from "./footer";
 import { Header } from "./header";
@@ -54,7 +55,7 @@ export function Landing({ locale }: { locale: Locale }) {
               <p className="section-label">{copy.navigation.about}</p>
               <h2 id="about-title">{copy.about.firstLine}<br /> Lavareda<span className="accent">.</span></h2>
               <p>{copy.about.description}</p>
-              <a className="text-link" href={linkedin}>{copy.about.linkedin}</a>
+              <ExternalLink className="text-link" href={linkedin}>{copy.about.linkedin}</ExternalLink>
             </div>
           </div>
         </section>
@@ -66,21 +67,19 @@ export function Landing({ locale }: { locale: Locale }) {
             <p>{copy.contact.intro}</p>
             <div className="contact-actions">
               <a className="button button-light" href={`mailto:${email}`}>{copy.contact.email}</a>
-              <a className="button button-outline" href={whatsapp}>WhatsApp</a>
+              <ExternalLink className="button button-outline" href={whatsapp}>WhatsApp</ExternalLink>
             </div>
           </div>
         </section>
       </main>
       <Footer copy={copy} whatsapp={whatsapp} />
-      <a
+      <ExternalLink
         aria-label={copy.accessibility.whatsapp}
         className="floating-whatsapp"
         href={whatsapp}
-        rel="noreferrer"
-        target="_blank"
       >
         <Image alt="" src="/brand/whatsapp.png" width={28} height={28} unoptimized />
-      </a>
+      </ExternalLink>
     </>
   );
 }
