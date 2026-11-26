@@ -243,7 +243,7 @@ const pt: SiteCopy = {
     intro: "Soluções para marca, presença digital, crescimento e produto, com estratégia, design e execução a trabalhar em conjunto.",
     action: "Falar sobre este produto",
     items: {
-      identity: { name: "Identidade de Marca", details: "Renove ou crie uma identidade de marca completa e coerente." },
+      identity: { name: "Identidade Visual", details: "Renove ou crie uma identidade visual completa e coerente." },
       landing: { name: "Landing Page", details: "Páginas pensadas para converter, com marcações online e pagamentos integrados." },
       social: { name: "Redes Sociais", details: "Estratégias de venda online, publicidade paga e gestão completa das suas redes sociais." },
       diagnosis: { name: "Diagnóstico de Produto", details: "Análise, estratégia, design e execução do seu projeto, do diagnóstico ao lançamento." },

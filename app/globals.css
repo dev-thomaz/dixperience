@@ -634,7 +634,6 @@ html:has(.brand-dialog[open]) { overflow: hidden; }
 }
 
 .products { border-top: 1px solid #ffffff20; background-color: #151020; }
-.offers-intro h2 { letter-spacing: -.052em; text-wrap: pretty; }
 .offers-intro .section-label {
   display: flex;
   align-items: center;
@@ -653,6 +652,7 @@ html:has(.brand-dialog[open]) { overflow: hidden; }
 .offers-intro > p:last-of-type:not(.section-label) { max-width: 43rem; color: #e3dbe9; }
 
 .products-intro {
+  --products-mark-size: clamp(3.4rem, 8.5vw, 8rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -661,7 +661,7 @@ html:has(.brand-dialog[open]) { overflow: hidden; }
 
 .products-mark {
   flex: none;
-  width: clamp(3.4rem, 8.5vw, 8rem);
+  width: var(--products-mark-size);
   border-radius: 50%;
   box-shadow: 0 .25rem 2rem #6a2bc359;
 }
@@ -1040,9 +1040,13 @@ html:has(.brand-dialog[open]) { overflow: hidden; }
 }
 
 @media (max-width: 560px) {
-  .offers-intro h2 { font-size: clamp(2.35rem, 8.8vw, 3.1rem); }
   .product-grid { grid-template-columns: 1fr; }
-  .products-intro { align-items: flex-start; }
+  .products-intro { position: relative; display: block; }
+  .products-intro .section-label {
+    min-height: var(--products-mark-size);
+    padding-inline-end: calc(var(--products-mark-size) + 1rem);
+  }
+  .products-mark { position: absolute; inset: 0 0 auto auto; }
   .about-layout { grid-template-columns: 1fr; }
   .portrait { max-width: 24rem; }
   .about .section-intro { grid-row: 1; }
