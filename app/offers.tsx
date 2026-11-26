@@ -38,41 +38,45 @@ type ContactOffer = { discussOffer: (name: string) => string };
 
 export function Approach({ copy, discussOffer }: { copy: SiteCopy["approach"] } & ContactOffer) {
   return (
-    <section className="offers-section approach section-anchor" id="approach" aria-labelledby="approach-title" tabIndex={-1}>
-      <div className="shell">
-        <div className="section-intro offers-intro">
-          <p className="section-label">{copy.label}</p>
+    <section className="approach section-anchor" id="approach" aria-labelledby="approach-title" tabIndex={-1}>
+      <div className="approach-intro">
+        <div className="shell section-intro">
           <h2 id="approach-title">{copy.title}<span className="accent">.</span></h2>
+          <p>{copy.intro}</p>
         </div>
-        <ul className="offers-grid approach-grid">
-          {approachCards.map(({ id, tone }) => {
-            const { name, tags, details, fit, action } = copy.items[id];
-            return (
-              <li className="offer-card approach-card" data-tone={tone} key={id}>
-                <ul aria-label={name} className="offer-tags">
-                  {tags.map((tag) => <li key={tag}>{tag}</li>)}
-                </ul>
-                <div className="offer-heading">
-                  <span className="offer-icon"><OfferIcon name={id} /></span>
-                  <h3>{name}</h3>
-                </div>
-                <p>{details}</p>
-                <div className="offer-fit">
-                  <p><strong>{copy.fit}</strong></p>
-                  <ul>
-                    {fit.map((line) => <li key={line}>{line}</li>)}
+      </div>
+      <div className="offers-section approach-content">
+        <div className="shell">
+          <ul className="offers-grid approach-grid">
+            {approachCards.map(({ id, tone }) => {
+              const { name, tags, details, fit, action } = copy.items[id];
+              return (
+                <li className="offer-card approach-card" data-tone={tone} key={id}>
+                  <ul aria-label={name} className="offer-tags">
+                    {tags.map((tag) => <li key={tag}>{tag}</li>)}
                   </ul>
-                </div>
-                <a className="button offer-button" href={discussOffer(name)}>{action}</a>
-              </li>
-            );
-          })}
-        </ul>
-        <div className="discovery-call">
-          <h3>{copy.discovery.question}<br />{" "}{copy.discovery.invitation}</h3>
-          <a className="button button-light" href={whatsappLink(copy.discovery.message)}>
-            {copy.discovery.action}
-          </a>
+                  <div className="offer-heading">
+                    <span className="offer-icon"><OfferIcon name={id} /></span>
+                    <h3>{name}</h3>
+                  </div>
+                  <p>{details}</p>
+                  <div className="offer-fit">
+                    <p><strong>{copy.fit}</strong></p>
+                    <ul>
+                      {fit.map((line) => <li key={line}>{line}</li>)}
+                    </ul>
+                  </div>
+                  <a className="button offer-button" href={discussOffer(name)}>{action}</a>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="discovery-call">
+            <h3>{copy.discovery.question}<br />{" "}{copy.discovery.invitation}</h3>
+            <a className="button button-light" href={whatsappLink(copy.discovery.message)}>
+              {copy.discovery.action}
+            </a>
+          </div>
         </div>
       </div>
     </section>

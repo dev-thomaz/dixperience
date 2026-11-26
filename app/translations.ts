@@ -56,8 +56,8 @@ const en = {
   },
   brands: "Selected brands",
   approach: {
-    label: "Ways to work with us",
-    title: "Built around your business stage",
+    title: "How we work",
+    intro: "Built around your business stage.",
     fit: "A good fit if…",
     discovery: {
       question: "Not sure what your product needs?",
@@ -192,8 +192,8 @@ const pt: SiteCopy = {
   },
   brands: "Marcas selecionadas",
   approach: {
-    label: "Formas de trabalhar connosco",
-    title: "À medida da fase do seu negócio",
+    title: "Como trabalhamos",
+    intro: "À medida da fase do seu negócio.",
     fit: "Faz sentido para si se…",
     discovery: {
       question: "Ainda não sabe do que o seu produto precisa?",

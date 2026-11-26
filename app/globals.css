@@ -525,7 +525,7 @@ html:has(.brand-dialog[open]) { overflow: hidden; }
   .brand-dialog-close:focus-visible { outline-color: Highlight; }
 }
 
-.solutions, .about {
+.solutions, .approach-intro, .about {
   --accent: #d00680;
   background: var(--paper);
   color: var(--ink);
@@ -565,7 +565,10 @@ html:has(.brand-dialog[open]) { overflow: hidden; }
   line-height: 1.55;
 }
 
-.solutions .section-intro > p:last-of-type { max-width: 47rem; margin-top: 1.15rem; }
+.solutions .section-intro > p:last-of-type,
+.approach-intro .section-intro > p:last-of-type { max-width: 47rem; margin-top: 1.15rem; }
+
+.approach-intro { padding-block: clamp(3.4rem, 6.5vw, 6.5rem); }
 
 .solution-list {
   display: grid;
@@ -669,7 +672,11 @@ html:has(.brand-dialog[open]) { overflow: hidden; }
   margin-top: clamp(2rem, 3.5vw, 3.6rem);
 }
 
-.approach-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.approach-content { padding-top: clamp(2rem, 4vw, 4rem); }
+.approach-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0;
+}
 .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
 .discovery-call {
