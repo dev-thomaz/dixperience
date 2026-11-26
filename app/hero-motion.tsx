@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export function HeroMotion() {
+export function HeroMotion({ play, pause }: { play: string; pause: string }) {
   const backdrop = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const manualPlayback = useRef<(() => void) | null>(null);
@@ -76,7 +76,7 @@ export function HeroMotion() {
       </div>
       {available && (
         <button
-          aria-label={playing ? "Pause background animation" : "Play background animation"}
+          aria-label={playing ? pause : play}
           className="motion-toggle"
           onClick={() => manualPlayback.current?.()}
           type="button"

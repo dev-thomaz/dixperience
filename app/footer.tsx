@@ -1,35 +1,34 @@
 import Image from "next/image";
-import { email, linkedin, navigation, solutions, whatsapp } from "./content";
+import { email, linkedin } from "./content";
+import type { SiteCopy } from "./translations";
 
-const explore = navigation.flatMap((item) =>
-  item.id === "contact" ? [{ id: "about", label: "About" }, item] : [item],
-);
+const explore = ["home", "solutions", "work", "approach", "products", "about", "contact"] as const;
 
-export function Footer() {
+export function Footer({ copy, whatsapp }: { copy: SiteCopy; whatsapp: string }) {
   return (
     <footer className="footer">
       <div className="shell">
         <div className="footer-columns">
           <nav aria-labelledby="footer-explore">
-            <h2 id="footer-explore">Explore</h2>
+            <h2 id="footer-explore">{copy.footer.explore}</h2>
             <ul>
-              {explore.map(({ id, label }) => (
-                <li key={id}><a href={`#${id}`}>{label}</a></li>
+              {explore.map((id) => (
+                <li key={id}><a href={`#${id}`}>{copy.navigation[id]}</a></li>
               ))}
             </ul>
           </nav>
           <nav aria-labelledby="footer-services">
-            <h2 id="footer-services">Services</h2>
+            <h2 id="footer-services">{copy.footer.services}</h2>
             <ul>
-              {Object.entries(solutions).map(([id, { name }]) => (
+              {Object.entries(copy.solutions.items).map(([id, { name }]) => (
                 <li key={id}><a href={`#service-${id}`}>{name}</a></li>
               ))}
             </ul>
           </nav>
           <nav aria-labelledby="footer-connect">
-            <h2 id="footer-connect">Connect</h2>
+            <h2 id="footer-connect">{copy.footer.connect}</h2>
             <ul>
-              <li><a href={`mailto:${email}`}>Email</a></li>
+              <li><a href={`mailto:${email}`}>{copy.footer.email}</a></li>
               <li><a href={whatsapp}>WhatsApp</a></li>
               <li><a href={linkedin}>LinkedIn</a></li>
             </ul>
@@ -37,9 +36,9 @@ export function Footer() {
         </div>
         <div className="footer-signature">
           <a className="brand-link footer-brand" href="#home">
-            <Image src="/brand/wordmark.webp" alt="D!XPERIENCE — Back to top" width={686} height={81} />
+            <Image src="/brand/wordmark.webp" alt={copy.accessibility.backToTop} width={686} height={81} />
           </a>
-          <small>© D!XPERIENCE</small>
+          <small>{copy.footer.rights}</small>
         </div>
       </div>
     </footer>

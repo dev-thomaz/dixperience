@@ -16,7 +16,7 @@ const brands = [
   { name: "Duas Luas", file: "duas-luas", width: 333, height: 136 },
 ];
 
-export function SelectedBrands() {
+export function SelectedBrands({ title, close }: { title: string; close: string }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const opener = useRef<HTMLButtonElement>(null);
   const [selectedBrand, setSelectedBrand] = useState("");
@@ -24,7 +24,7 @@ export function SelectedBrands() {
   return (
     <section aria-labelledby="brands-title" className="selected-brands section-anchor" id="brands">
       <div className="shell">
-        <h2 className="section-label" id="brands-title">Selected brands</h2>
+        <h2 className="section-label" id="brands-title">{title}</h2>
         <ul className="brand-grid">
           {brands.map((brand) => (
             <li key={brand.file}>
@@ -65,7 +65,7 @@ export function SelectedBrands() {
       >
         <div className="brand-dialog-content">
           <button
-            aria-label="Close"
+            aria-label={close}
             autoFocus
             className="brand-dialog-close"
             onClick={() => dialog.current?.close()}

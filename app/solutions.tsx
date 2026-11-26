@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
-import { solutions } from "./content";
+import type { SiteCopy } from "./translations";
 
-type Service = keyof typeof solutions;
+type Service = keyof SiteCopy["solutions"]["items"];
 
 const serviceOrder: Service[] = [
   "consulting", "branding", "web-design", "product-design", "marketing", "communication",
@@ -16,17 +16,17 @@ const icons: Record<Service, ReactNode> = {
   communication: <><path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-5 3V6a2 2 0 0 1 2-2Z" /><path d="M7 9h10m-10 4h7" /></>,
 };
 
-export function Solutions() {
+export function Solutions({ copy }: { copy: SiteCopy["solutions"] }) {
   return (
     <section className="solutions section-anchor" id="solutions" aria-labelledby="solutions-title" tabIndex={-1}>
       <div className="shell">
         <div className="section-intro">
-          <h2 id="solutions-title">What we do<span className="accent">.</span></h2>
-          <p>Tailored creative and digital solutions for every stage of your business.</p>
+          <h2 id="solutions-title">{copy.title}<span className="accent">.</span></h2>
+          <p>{copy.intro}</p>
         </div>
         <ul className="solution-list">
           {serviceOrder.map((id) => {
-            const { name, details } = solutions[id];
+            const { name, details } = copy.items[id];
             return (
               <li className="section-anchor" id={`service-${id}`} key={id} tabIndex={-1}>
                 <svg aria-hidden="true" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24">

@@ -1,20 +1,18 @@
 import Image from "next/image";
+import type { SiteCopy } from "./translations";
 
-export function FeaturedWork() {
+export function FeaturedWork({ copy }: { copy: SiteCopy["work"] }) {
   return (
     <section className="featured-work section-anchor" id="work" aria-labelledby="work-title" tabIndex={-1}>
       <div className="shell">
         <div className="work-layout">
           <div className="work-intro section-intro">
-            <p className="section-label">Featured work</p>
+            <p className="section-label">{copy.label}</p>
             <h2 id="work-title">Visit South<br /> America<span className="accent">.</span></h2>
             <div className="work-summary">
-              <p>
-                A tourism portal for a joint initiative across six South American countries.
-                Travellers can discover destinations, explore by interest and start planning a trip.
-              </p>
+              <p>{copy.summary}</p>
               <a className="button button-dark" href="https://visitsouthamerica.travel/">
-                Visit the live site
+                {copy.visit}
               </a>
             </div>
           </div>
@@ -22,7 +20,7 @@ export function FeaturedWork() {
           <div className="work-visual">
             <div className="work-desktop">
               <Image
-                alt="Visit South America homepage showing a traveller in a mountain landscape."
+                alt={copy.desktopAlt}
                 src="/work/visit-south-america-desktop.webp"
                 width={1440}
                 height={880}
@@ -31,7 +29,7 @@ export function FeaturedWork() {
             </div>
             <div className="work-mobile">
               <Image
-                alt="Mobile view of the Quebrada de Humahuaca experience in Argentina."
+                alt={copy.mobileAlt}
                 src="/work/visit-south-america-experience.webp"
                 width={384}
                 height={732}
@@ -42,18 +40,9 @@ export function FeaturedWork() {
         </div>
 
         <dl className="work-facts">
-          <div>
-            <dt>Scope</dt>
-            <dd>Public website redevelopment</dd>
-          </div>
-          <div>
-            <dt>Key features</dt>
-            <dd>Destination guides, themed experiences and a travel planner</dd>
-          </div>
-          <div>
-            <dt>Languages</dt>
-            <dd>Spanish, English and Portuguese</dd>
-          </div>
+          {copy.facts.map(({ label, value }) => (
+            <div key={label}><dt>{label}</dt><dd>{value}</dd></div>
+          ))}
         </dl>
       </div>
     </section>

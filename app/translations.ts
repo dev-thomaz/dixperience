@@ -1,0 +1,263 @@
+import type { Locale } from "./content";
+
+const en = {
+  title: "D!XPERIENCE — Creative & Digital Consultancy",
+  description: "Creative and digital consultancy. We combine digital strategy, creativity, design, and technology to build brands and digital experiences that connect with people, drive growth, and deliver meaningful business results.",
+  navigation: {
+    home: "Home",
+    solutions: "Solutions",
+    work: "Work",
+    approach: "How we work",
+    products: "Products",
+    about: "About",
+    contact: "Contact",
+  },
+  accessibility: {
+    skip: "Skip to content",
+    navigation: "Main navigation",
+    languages: "Language",
+    home: "D!XPERIENCE — Home",
+    backToTop: "D!XPERIENCE — Back to top",
+    menu: "Menu",
+    close: "Close",
+    play: "Play background animation",
+    pause: "Pause background animation",
+    whatsapp: "Chat with D!XPERIENCE on WhatsApp",
+  },
+  hero: {
+    firstLine: "Personalized",
+    secondLine: "Innovation",
+    talk: "Talk to us",
+    work: "View our work",
+  },
+  solutions: {
+    title: "What we do",
+    intro: "Tailored creative and digital solutions for every stage of your business.",
+    items: {
+      consulting: { name: "Creative & Digital Consulting", details: "Brand consulting, digital strategy, customer experience and business communication." },
+      marketing: { name: "Digital Marketing & Growth", details: "Social media, paid campaigns, content marketing, email and growth strategy." },
+      "web-design": { name: "Web & Digital Design", details: "Websites, landing pages, e-commerce, apps and digital experiences." },
+      communication: { name: "Content & Communication", details: "UX writing, copywriting, content design and content strategy." },
+      branding: { name: "Branding & Creative Design", details: "Brand identity, graphic design, visual communication and art direction." },
+      "product-design": { name: "UX/UI & Product Design", details: "User research, product design, prototyping and user journeys." },
+    },
+  },
+  work: {
+    label: "Featured work",
+    summary: "A tourism portal for a joint initiative across six South American countries. Travellers can discover destinations, explore by interest and start planning a trip.",
+    visit: "Visit the live site",
+    desktopAlt: "Visit South America homepage showing a traveller in a mountain landscape.",
+    mobileAlt: "Mobile view of the Quebrada de Humahuaca experience in Argentina.",
+    facts: [
+      { label: "Scope", value: "Public website redevelopment" },
+      { label: "Key features", value: "Destination guides, themed experiences and a travel planner" },
+      { label: "Languages", value: "Spanish, English and Portuguese" },
+    ],
+  },
+  brands: "Selected brands",
+  approach: {
+    label: "Ways to work with us",
+    title: "Built around your business stage",
+    fit: "A good fit if…",
+    items: {
+      launch: {
+        name: "Launch & Build",
+        tags: ["Brand identity", "Web presence", "Launch strategy"],
+        details: "For entrepreneurs, startups and businesses ready to establish a strong digital foundation. We combine strategy, creativity, design and technology to bring your ideas to life.",
+        fit: [
+          "You’re starting a business or launching a new brand or product.",
+          "You need a professional brand identity, website or digital experience.",
+          "You’re looking for a creative and strategic partner to guide your next steps.",
+        ],
+        action: "Let’s build together",
+      },
+      growth: {
+        name: "Grow & Evolve",
+        tags: ["Digital growth", "Experience optimisation", "Consulting"],
+        details: "For growing and established businesses looking to strengthen their market presence and improve digital performance. Get strategic guidance and specialist support as your goals evolve.",
+        fit: [
+          "Your digital channels are falling short of your goals.",
+          "You want to improve customer experience, engagement, leads or conversions.",
+          "You need ongoing creative, digital and strategic support.",
+        ],
+        action: "Let’s grow together",
+      },
+      tailored: {
+        name: "Tailored Solutions",
+        tags: ["Landing page", "E-commerce", "App or platform"],
+        details: "For a specific need, from a website or landing page to a management platform, online shop, app, brand identity or custom project. We design and build it around your goals.",
+        fit: [
+          "You already know what you need to build.",
+          "You’re looking for an experienced partner to deliver the project.",
+          "You want a solution that fits your goals, timeline and budget.",
+        ],
+        action: "Request a solution",
+      },
+    },
+  },
+  products: {
+    label: "Products",
+    title: "Some of our products",
+    intro: "Focused solutions for brand, digital presence, growth and product, with strategy, design and execution working together.",
+    action: "Discuss this product",
+    items: {
+      identity: { name: "Brand Identity", details: "Rebrand or create a complete and consistent brand identity." },
+      landing: { name: "Landing Page", details: "Pages designed to convert, with online booking and integrated payments." },
+      social: { name: "Social Media", details: "Online sales strategies, paid media and complete management of your social channels." },
+      diagnosis: { name: "Product Diagnosis", details: "Analysis, strategy, design and execution for your project, from diagnosis to launch." },
+    },
+  },
+  about: {
+    firstLine: "Meet Diandra",
+    description: "With over ten years of experience across design, digital marketing and product, Diandra brings together creative thinking, user-centred design and business strategy.",
+    linkedin: "Diandra on LinkedIn",
+  },
+  contact: {
+    question: "Not sure what your product needs?",
+    invitation: "Let’s figure it out together.",
+    call: "Book a free discovery call",
+    generalMessage: "Hi! I found D!XPERIENCE through your website and would love to discuss a project.",
+    callMessage: "Hi! I’d like to arrange a free discovery call with D!XPERIENCE.",
+    offerMessage: "Hi! I’d like to talk about {offer}.",
+  },
+  footer: {
+    explore: "Explore",
+    services: "Services",
+    connect: "Connect",
+    email: "Email",
+    rights: "© 2026 D!XPERIENCE. All rights reserved.",
+  },
+};
+
+export type SiteCopy = typeof en;
+
+const pt: SiteCopy = {
+  title: "D!XPERIENCE — Consultoria Criativa e Digital",
+  description: "Consultoria criativa e digital. Combinamos estratégia digital, criatividade, design e tecnologia para criar marcas e experiências digitais que se ligam às pessoas, impulsionam o crescimento e geram resultados para o negócio.",
+  navigation: {
+    home: "Início",
+    solutions: "Soluções",
+    work: "Projetos",
+    approach: "Como trabalhamos",
+    products: "Produtos",
+    about: "Sobre",
+    contact: "Contacto",
+  },
+  accessibility: {
+    skip: "Saltar para o conteúdo",
+    navigation: "Navegação principal",
+    languages: "Idioma",
+    home: "D!XPERIENCE — Início",
+    backToTop: "D!XPERIENCE — Voltar ao topo",
+    menu: "Menu",
+    close: "Fechar",
+    play: "Reproduzir animação de fundo",
+    pause: "Pausar animação de fundo",
+    whatsapp: "Falar com a D!XPERIENCE no WhatsApp",
+  },
+  hero: {
+    firstLine: "Inovação",
+    secondLine: "personalizada",
+    talk: "Fale connosco",
+    work: "Ver os nossos projetos",
+  },
+  solutions: {
+    title: "O que fazemos",
+    intro: "Soluções criativas e digitais à medida para cada fase do seu negócio.",
+    items: {
+      consulting: { name: "Consultoria Criativa e Digital", details: "Consultoria de marca, estratégia digital, experiência de cliente e comunicação empresarial." },
+      marketing: { name: "Marketing Digital e Crescimento", details: "Redes sociais, campanhas pagas, marketing de conteúdos, e-mail e estratégia de crescimento." },
+      "web-design": { name: "Design Web e Digital", details: "Sites, landing pages, comércio eletrónico, apps e experiências digitais." },
+      communication: { name: "Conteúdo e Comunicação", details: "UX writing, copywriting, design de conteúdos e estratégia editorial." },
+      branding: { name: "Branding e Design Criativo", details: "Identidade de marca, design gráfico, comunicação visual e direção de arte." },
+      "product-design": { name: "UX/UI e Design de Produto", details: "Investigação com utilizadores, design de produto, prototipagem e jornadas de utilização." },
+    },
+  },
+  work: {
+    label: "Projeto em destaque",
+    summary: "Um portal de turismo para uma iniciativa conjunta de seis países sul-americanos. Os viajantes podem descobrir destinos, explorar experiências por interesse e começar a planear uma viagem.",
+    visit: "Visitar o site",
+    desktopAlt: "Página inicial do Visit South America com um viajante numa paisagem montanhosa.",
+    mobileAlt: "Vista em telemóvel da experiência Quebrada de Humahuaca, na Argentina.",
+    facts: [
+      { label: "Âmbito", value: "Reconstrução do site público" },
+      { label: "Funcionalidades", value: "Guias de destinos, experiências temáticas e planeador de viagens" },
+      { label: "Idiomas", value: "Espanhol, inglês e português" },
+    ],
+  },
+  brands: "Marcas selecionadas",
+  approach: {
+    label: "Formas de trabalhar connosco",
+    title: "À medida da fase do seu negócio",
+    fit: "Faz sentido para si se…",
+    items: {
+      launch: {
+        name: "Lançar e Construir",
+        tags: ["Identidade de marca", "Presença digital", "Estratégia de lançamento"],
+        details: "Para empreendedores, startups e empresas que querem criar uma base digital sólida. Combinamos estratégia, criatividade, design e tecnologia para dar forma às suas ideias.",
+        fit: [
+          "Está a começar um negócio ou a lançar uma nova marca ou produto.",
+          "Precisa de uma identidade profissional, um site ou uma experiência digital.",
+          "Procura um parceiro criativo e estratégico para orientar os próximos passos.",
+        ],
+        action: "Vamos construir em conjunto",
+      },
+      growth: {
+        name: "Crescer e Evoluir",
+        tags: ["Crescimento digital", "Melhoria da experiência", "Consultoria"],
+        details: "Para empresas em crescimento ou consolidadas que querem reforçar a presença no mercado e melhorar o desempenho digital. Conte com orientação estratégica e apoio especializado à medida que os seus objetivos evoluem.",
+        fit: [
+          "Os seus canais digitais ficam aquém dos resultados esperados.",
+          "Quer melhorar a experiência de cliente, o envolvimento, os contactos ou as conversões.",
+          "Precisa de apoio criativo, digital e estratégico contínuo.",
+        ],
+        action: "Vamos crescer em conjunto",
+      },
+      tailored: {
+        name: "Soluções à Medida",
+        tags: ["Landing page", "Comércio eletrónico", "App ou plataforma"],
+        details: "Para uma necessidade concreta, de um site ou landing page a uma plataforma de gestão, loja online, app, identidade de marca ou projeto personalizado. Concebemos e desenvolvemos a solução em função dos seus objetivos.",
+        fit: [
+          "Já sabe o que precisa de desenvolver.",
+          "Procura um parceiro experiente para concretizar o projeto.",
+          "Quer uma solução ajustada aos seus objetivos, prazo e orçamento.",
+        ],
+        action: "Pedir uma solução",
+      },
+    },
+  },
+  products: {
+    label: "Produtos",
+    title: "Alguns dos nossos produtos",
+    intro: "Soluções para marca, presença digital, crescimento e produto, com estratégia, design e execução a trabalhar em conjunto.",
+    action: "Falar sobre este produto",
+    items: {
+      identity: { name: "Identidade de Marca", details: "Renove ou crie uma identidade de marca completa e coerente." },
+      landing: { name: "Landing Page", details: "Páginas pensadas para converter, com marcações online e pagamentos integrados." },
+      social: { name: "Redes Sociais", details: "Estratégias de venda online, publicidade paga e gestão completa das suas redes sociais." },
+      diagnosis: { name: "Diagnóstico de Produto", details: "Análise, estratégia, design e execução do seu projeto, do diagnóstico ao lançamento." },
+    },
+  },
+  about: {
+    firstLine: "Conheça Diandra",
+    description: "Com mais de dez anos de experiência em design, marketing digital e produto, Diandra combina pensamento criativo, design centrado no utilizador e estratégia de negócio.",
+    linkedin: "Diandra no LinkedIn",
+  },
+  contact: {
+    question: "Ainda não sabe do que o seu produto precisa?",
+    invitation: "Vamos descobrir em conjunto.",
+    call: "Agendar uma conversa gratuita",
+    generalMessage: "Olá! Encontrei a D!XPERIENCE através do vosso site e gostava de conversar sobre um projeto.",
+    callMessage: "Olá! Gostava de agendar uma conversa inicial gratuita com a D!XPERIENCE.",
+    offerMessage: "Olá! Gostava de conversar sobre {offer}.",
+  },
+  footer: {
+    explore: "Explorar",
+    services: "Serviços",
+    connect: "Contactos",
+    email: "E-mail",
+    rights: "© 2026 D!XPERIENCE. Todos os direitos reservados.",
+  },
+};
+
+export const translations: Record<Locale, SiteCopy> = { en, pt };

@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { navigation } from "./content";
+import { languageTags, localePaths, locales, navigationIds, sectionIds, type Locale } from "./content";
+import type { SiteCopy } from "./translations";
 
-export function Header() {
+type HeaderProps = Pick<SiteCopy, "navigation" | "accessibility"> & { locale: Locale };
+
+export function Header({ locale, navigation, accessibility }: HeaderProps) {
   const headerRef = useRef<HTMLElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +15,7 @@ export function Header() {
   const [activeSection, setActiveSection] = useState<string>("home");
 
   useEffect(() => {
-    const sections = navigation.flatMap(({ id }) => {
+    const sections = sectionIds.flatMap((id) => {
       const section = document.getElementById(id);
       return section ? [section] : [];
     });
@@ -61,7 +64,7 @@ export function Header() {
       }
     };
 
-    const desktop = window.matchMedia("(min-width: 761px)");
+    const desktop = window.matchMedia("(min-width: 1061px)");
     const closeOnDesktop = () => {
       if (desktop.matches) setMenuOpen(false);
     };
@@ -83,6 +86,9 @@ export function Header() {
     document.getElementById(id)?.focus({ preventScroll: true });
   };
 
+  const navSection = activeSection === "brands" ? "work" : activeSection === "about" ? "products" : activeSection;
+  const sectionHash = activeSection === "home" ? "" : `#${activeSection}`;
+
   return (
     <header
       className="site-header"
@@ -94,36 +100,59 @@ export function Header() {
         <a className="brand-link" href="#home" onClick={() => navigateFromMenu("home")}>
           <Image
             src="/brand/wordmark.webp"
-            alt="D!XPERIENCE — Home"
+            alt={accessibility.home}
             width={686}
             height={81}
-            sizes="(max-width: 460px) 170px, (max-width: 760px) 224px, (max-width: 1680px) 19vw, 320px"
+            sizes="(max-width: 460px) 170px, (max-width: 1060px) 224px, (max-width: 1680px) 19vw, 320px"
             preload
           />
         </a>
-        <button
-          aria-controls="primary-navigation"
-          aria-expanded={menuOpen}
-          className="menu-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-          ref={menuButtonRef}
-          type="button"
-        >
-          <span>{menuOpen ? "Close" : "Menu"}</span>
-          <span className="menu-icon" aria-hidden="true"><i /><i /></span>
-        </button>
-        <nav aria-label="Main navigation" className="header-nav" id="primary-navigation">
-          {navigation.map(({ id, label }) => (
+        <nav aria-label={accessibility.navigation} className="header-nav" id="primary-navigation">
+          {navigationIds.map((id) => (
             <a
-              aria-current={activeSection === id ? "location" : undefined}
+              aria-current={navSection === id ? "location" : undefined}
               href={`#${id}`}
               key={id}
               onClick={() => navigateFromMenu(id)}
             >
-              {label}
+              {navigation[id]}
             </a>
           ))}
         </nav>
+        <div className="header-controls">
+          <nav aria-label={accessibility.languages} className="language-switch">
+            {locales.map((code) => {
+              const name = code === "en" ? "English" : "Português";
+              return code === locale ? (
+                <span aria-current="page" aria-label={name} key={code} lang={languageTags[code]}>{code}</span>
+              ) : (
+                <a
+                  aria-label={name}
+                  href={localePaths[code] + sectionHash}
+                  hrefLang={languageTags[code]}
+                  key={code}
+                  lang={languageTags[code]}
+                  onClick={(event) => {
+                    if (window.location.hash) event.currentTarget.hash = window.location.hash;
+                  }}
+                >
+                  {code}
+                </a>
+              );
+            })}
+          </nav>
+          <button
+            aria-controls="primary-navigation"
+            aria-expanded={menuOpen}
+            className="menu-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+            ref={menuButtonRef}
+            type="button"
+          >
+            <span>{menuOpen ? accessibility.close : accessibility.menu}</span>
+            <span className="menu-icon" aria-hidden="true"><i /><i /></span>
+          </button>
+        </div>
       </div>
     </header>
   );
